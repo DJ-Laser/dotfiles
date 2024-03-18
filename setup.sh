@@ -18,10 +18,10 @@ fi
 # Install packages
 
 # Base packages
-sudo apt install wget gpg curl git
+sudo apt install -y wget gpg curl git
 
 # Nautilus (GNU file manager)
-sudo apt install nautilus
+sudo apt install -y nautilus
 
 # Zoxide (better cd)
 curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
@@ -58,7 +58,7 @@ if [$code = true] then
 	wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
 	sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg
 	sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
-	sudo apt install apt-transport-https
+	sudo apt install -y apt-transport-https
 fi
 
 # Freetube setup
@@ -68,9 +68,9 @@ wget https://github.com/FreeTubeApp/FreeTube/releases/download/v0.19.2-beta/free
 sudo apt update
 if [$code = true]
 then
-	sudo apt install code;
+	sudo apt install -y code;
 fi
-sudo apt install firefox ./freetube_0.19.2_amd64.deb
+sudo apt install -y firefox ./freetube_0.19.2_amd64.deb
 
 sudo apt upgrade
 
